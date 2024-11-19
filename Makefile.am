@@ -4,6 +4,8 @@ funca_SOURCES = main.cpp FuncA.cpp FuncA.h
 dist_man_MANS = funca.1
 dist_pkgdata_DATA = data.txt
 
+SUBDIR = tests
+
 CTRLF_DIR=$(CURDIR)/deb/DEBIAN
 CTRLF_NAME=$(CTRLF_DIR)/control
 
