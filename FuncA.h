@@ -9,6 +9,7 @@ class FuncA
 public:
     double count(double x, int terms);
     FuncA();
+    void testServerSimulation();
     virtual ~FuncA() {}
 };
 
