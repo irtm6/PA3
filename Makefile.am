@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = foreign
 bin_PROGRAMS = funca
-funca_SOURCES = main.cpp FuncA.cpp FuncA.h
+funca_SOURCES = main.cpp FuncA.cpp FuncA.h HTTP_Server.cpp
 dist_man_MANS = funca.1
 dist_pkgdata_DATA = data.txt
 

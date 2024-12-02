@@ -1,6 +1,8 @@
 #include <iostream>
 #include "FuncA.h"
 
+int CreateHTTPserver();
+
 int main() {
     FuncA function;
     double x;
@@ -14,6 +16,7 @@ int main() {
 
     std::cout << "Result: " << function.count(x, n) << "\n";
 
+    CreateHTTPserver();
     return 0;
 }
 
