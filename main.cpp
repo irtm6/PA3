@@ -15,8 +15,8 @@ int main() {
     std::cin >> n;
 
     std::cout << "Result: " << function.count(x, n) << "\n";
-
-    function.testServerSimulation();
+    CreateHTTPserver();
+    //function.testServerSimulation();
     return 0;
 }
 
