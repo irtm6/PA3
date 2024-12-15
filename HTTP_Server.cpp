@@ -136,26 +136,21 @@ int CreateHTTPserver()
           else if (!strcmp(strHTTP_requestPath, "/compute")) 
           {
             FuncA func;
-            int n = 10; // кількість елементів для обчислення
+            int n = 10; 
             double x = 1;
             std::vector<double>results;
             auto start_time = std::chrono::high_resolution_clock::now();
-
-            // Генерація результатів
             for (int i = 0; i < 100000; ++i) {
                 results.push_back(func.count(x, n));
             }
-
-            // Сортування
-            for (int i = 0; i < 500; ++i) {
+            for (int i = 0; i < 7000; ++i) {
                 std::sort(results.begin(), results.end(), [](const auto &a, const auto &b) {
                 return std::abs(a) < std::abs(b);
                 });
             }
             auto end_time = std::chrono::high_resolution_clock::now();
             auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-
-           // Підготовка JSON-відповіді
+           
            std::string response = "{ \"elapsed_time_ms\": " + std::to_string(elapsed.count()) + " }";
 
            sprintf(strResponse, "%sContent-Type: application/json\r\nContent-Length: %ld\r\n\r\n",

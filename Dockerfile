@@ -1,7 +1,7 @@
 FROM alpine AS build
 RUN apk add --no-cache git build-base cmake automake autoconf coreutils
 WORKDIR /home/optima
-RUN git clone https://github.com/irtm6/PA3.git .
+COPY . /home/optima
 RUN [ -f configure ] || autoreconf -i && chmod +x configure && ./configure && make
 
 FROM alpine
