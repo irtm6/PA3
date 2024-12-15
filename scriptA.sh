@@ -66,8 +66,8 @@ while :; do
 
             if ! docker ps --format "{{.Names}}" | grep -q "^srv3$"; then
                 docker run -d --name srv3 --cpuset-cpus="2" --network server-network artnos1/optimafuncanew
-                pid=$(docker inspect -f '{{.State.Pid}}' srv3)
-                taskset -pc 2 $pid
+                
+                
             fi
         else
             idle_srv2_counter=$((idle_srv2_counter + 1))
